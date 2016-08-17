@@ -16,7 +16,8 @@ export default class DateTimeField extends Component {
     zIndex: 999,
     onChange: (x) => {
       console.log(x);
-    }
+    },
+    locale: "en_us"
   }
 
   resolvePropsInputFormat = () => {
@@ -339,6 +340,7 @@ export default class DateTimeField extends Component {
   }
 
   render() {
+    moment.locale(this.props.locale);
     return (
           <div>
             {this.renderOverlay()}
